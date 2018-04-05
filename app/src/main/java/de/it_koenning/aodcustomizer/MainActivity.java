@@ -11,5 +11,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        SharedPreferences getPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean isFirstRun = getPrefs.getBoolean("firstRun", true);
+
+        if (isFirstRun) {
+            //  Make a new preferences editor
+            SharedPreferences.Editor e = getPrefs.edit();
+            //  Edit preference to make it false because we don't want this to run again
+            e.putBoolean("firstRun", false);
+            //  Apply changes
+            e.apply();
+            //Start
+            Intent intent = new Intent(this, MainIntroActivity.class);
+            startActivity(intent);
+        }
+
     }
 }

@@ -33,7 +33,7 @@ public class MainIntroActivity extends AppIntro2 {
 
         // Turn vibration on and set intensity.
         // NOTE: you will probably need to ask VIBRATE permission in Manifest.
-        setVibrate(true);
+        setVibrate(false);
         setVibrateIntensity(30);
     }
 
@@ -53,7 +53,6 @@ public class MainIntroActivity extends AppIntro2 {
     public void onSlideChanged(@Nullable Fragment oldFragment, @Nullable Fragment newFragment) {
         super.onSlideChanged(oldFragment, newFragment);
         // Do something when the slide changes.
-        StartMainActivity();
     }
 
     private void StartMainActivity(){
