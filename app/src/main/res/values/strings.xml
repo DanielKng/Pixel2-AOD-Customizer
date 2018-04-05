@@ -4,4 +4,7 @@
 
     <string name="welcome_slide1_header">Hello Customization!</string>
     <string name="welcome_slide1_descr">AOD Customizer lets you customize your Pixel 2's Active-On-Display!</string>
+
+    <string name="welcome_slide2_header">As easy as...</string>
+    <string name="welcome_slide2_descr">pie (well, not that kind of a pie...)</string>
 </resources>
