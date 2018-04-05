@@ -1,17 +1,14 @@
 package de.it_koenning.aodcustomizer;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-
-import com.github.paolorotolo.appintro.AppIntro;
-
+import com.github.paolorotolo.appintro.AppIntro2;
 import de.it_koenning.aodcustomizer.slides.FirstSlide;
 
 
-public class MainIntroActivity extends AppIntro {
+public class MainIntroActivity extends AppIntro2 {
     FirstSlide first_slide = new FirstSlide();
 
     @Override
@@ -23,9 +20,6 @@ public class MainIntroActivity extends AppIntro {
         addSlide(first_slide);
 
         // OPTIONAL METHODS
-        // Override bar/separator color.
-        setBarColor(Color.parseColor("#3F51B5"));
-        setSeparatorColor(Color.parseColor("#2196F3"));
 
         // Hide Skip/Done button.
         showSkipButton(true);
