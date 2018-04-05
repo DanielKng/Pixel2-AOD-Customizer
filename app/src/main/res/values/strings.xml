@@ -2,9 +2,15 @@
     <string name="app_name">AOD Customizer</string>
     <string name="about">About me</string>
 
-    <string name="welcome_slide1_header">Hello Customization!</string>
-    <string name="welcome_slide1_descr">AOD Customizer lets you customize your Pixel 2's Active-On-Display!</string>
+    <string name="welcome_slide1_header">Welcome to AOD-Customizer</string>
+    <string name="welcome_slide1_descr">The easiest way to modify your Pixel 2\'s Active-On-Display!\n Show the Battery level, the current volume or more on your Display.</string>
 
     <string name="welcome_slide2_header">As easy as...</string>
-    <string name="welcome_slide2_descr">pie (well, not that kind of a pie...)</string>
+    <string name="welcome_slide2_descr">watching a movie on Netflix.\n AOD-Customizer aims to be simple and effectiv for everyone!</string>
+
+    <string name="welcome_slide3_header">How it works</string>
+    <string name="welcome_slide3_descr">This application works by sending an "intent" to the "SystemUI"-Google application. Simple, right? </string>
+
+    <string name="welcome_slide4_header">Permissions. Set. Go!</string>
+    <string name="welcome_slide_4_descr">This App needs some Permissions in order to work perfect.\n You can, but don\'t have to, grant them. May count on bad - or no function at all.</string>
 </resources>
