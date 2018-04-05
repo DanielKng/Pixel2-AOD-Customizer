@@ -11,10 +11,13 @@ import de.it_koenning.aodcustomizer.slides.FirstSlide;
 
 public class MainIntroActivity extends AppIntro {
     FirstSlide first_slide = new FirstSlide();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        //Hide Status-Bar
+        showStatusBar(false);
+        //Open up the slides
         addSlide(first_slide);
 
         // OPTIONAL METHODS
