@@ -73,8 +73,9 @@ public class MainIntroActivity extends AppIntro2 {
     }
 
     private void StartMainActivity(){
-        Intent startMain = new Intent(MainIntroActivity.this, MainActivity.class);
-        startActivity(startMain);
+            Intent settingsIntent = new Intent();
+            settingsIntent.setClass(getApplicationContext(), Preferences.class);
+            startActivity(settingsIntent);
         finish();
     }
     public void popBackStackTillEntry(int entryIndex) {
