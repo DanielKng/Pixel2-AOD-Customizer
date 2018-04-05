@@ -20,7 +20,7 @@ android {
         enabled = true
     }
     dexOptions {
-        javaMaxHeapSize "4G"
+        javaMaxHeapSize "6G"
     }
 }
 

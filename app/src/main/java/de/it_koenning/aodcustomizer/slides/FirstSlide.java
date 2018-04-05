@@ -1,19 +1,44 @@
 package de.it_koenning.aodcustomizer.slides;
 
+import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+
+import com.github.paolorotolo.appintro.ISlideBackgroundColorHolder;
 
 import de.it_koenning.aodcustomizer.R;
 
-public class FirstSlide extends Fragment {
+public class FirstSlide extends Fragment implements ISlideBackgroundColorHolder{
+    private LinearLayout layoutContainer;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.slide1, container, false);
+        View view = inflater.inflate(R.layout.slide1, container, false);
+        layoutContainer = (LinearLayout) view.findViewById(R.id.slide1);
+        return view;
+    }
+    @Override
+    public int getDefaultBackgroundColor() {
+        // Return the default background color of the slide.
+        return Color.parseColor("#F44336");
+    }
+
+    @Override
+    public void setBackgroundColor(@ColorInt int backgroundColor) {
+        // Set the background color of the view within your slide to which the transition should be applied.
+        if (layoutContainer != null) {
+            layoutContainer.setBackgroundColor(backgroundColor);
+        }
     }
 }

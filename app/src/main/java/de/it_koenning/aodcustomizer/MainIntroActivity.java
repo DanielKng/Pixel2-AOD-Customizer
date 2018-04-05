@@ -1,12 +1,17 @@
 package de.it_koenning.aodcustomizer;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.annotation.ColorInt;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+
 import com.github.paolorotolo.appintro.AppIntro2;
 import de.it_koenning.aodcustomizer.slides.FirstSlide;
 import de.it_koenning.aodcustomizer.slides.FourthSlide;
@@ -35,9 +40,9 @@ public class MainIntroActivity extends AppIntro2 {
 
         // OPTIONAL METHODS
         //Animations
-        setFadeAnimation();
+        setColorTransitionsEnabled(true);
         // Hide Skip/Done button.
-        showSkipButton(true);
+        showSkipButton(false);
         setProgressButtonEnabled(true);
 
         // Turn vibration on and set intensity.
@@ -49,13 +54,16 @@ public class MainIntroActivity extends AppIntro2 {
     @Override
     public void onSkipPressed(Fragment currentFragment) {
         super.onSkipPressed(currentFragment);
+        popBackStackTillEntry(0);
         StartMainActivity();
     }
 
     @Override
     public void onDonePressed(Fragment currentFragment) {
         super.onDonePressed(currentFragment);
+        popBackStackTillEntry(0);
         StartMainActivity();
+
     }
 
     @Override
@@ -67,5 +75,24 @@ public class MainIntroActivity extends AppIntro2 {
     private void StartMainActivity(){
         Intent startMain = new Intent(MainIntroActivity.this, MainActivity.class);
         startActivity(startMain);
+        finish();
     }
+    public void popBackStackTillEntry(int entryIndex) {
+
+        if (getSupportFragmentManager() == null) {
+            return;
+        }
+        if (getSupportFragmentManager().getBackStackEntryCount() <= entryIndex) {
+            return;
+        }
+        FragmentManager.BackStackEntry entry = getSupportFragmentManager().getBackStackEntryAt(
+                entryIndex);
+        if (entry != null) {
+            getSupportFragmentManager().popBackStackImmediate(entry.getId(),
+                    FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        }
+
+
+    }
+
 }

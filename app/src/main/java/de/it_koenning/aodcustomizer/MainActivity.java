@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
             //Start
             Intent intent = new Intent(this, MainIntroActivity.class);
             startActivity(intent);
+            //Exit the MainActivity to only have the Intro Open
+            finish();
         }
 
     }
